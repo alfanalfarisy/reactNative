@@ -1,22 +1,27 @@
 import * as React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
-import {Button} from 'react-native';
-import {useSelector, useDispatch} from 'react-redux';
-import {loginUser} from '@actions/authAction';
+import AuthHeading from '@atoms/Heading/AuthHeading';
+import ChartData from '../../../components/organisms/Chart';
+
+import {Dimensions} from 'react-native';
+const screenWidth = Dimensions.get('window').width;
 
 const HomeScreen = ({navigation}) => {
-  const name = useSelector((state) => state.auth.name);
-  const dispatch = useDispatch();
   return (
-    <View>
-      <Text>HOME PAGEE!!!</Text>
-      {/* <Button title="Go back" onPress={() => navigation.navigate('Maps')} /> */}
-      <Button title="KlickME" onPress={() => dispatch(loginUser('ALFNA'))} />
-      <Text>{name}</Text>
+    <View style={styles.container}>
+      <AuthHeading>Chart</AuthHeading>
+      <ChartData />
     </View>
   );
 };
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    flexDirection: 'column',
+    backgroundColor: '#F5FCFF',
+    padding: 10,
+  },
+});
 
 export default HomeScreen;

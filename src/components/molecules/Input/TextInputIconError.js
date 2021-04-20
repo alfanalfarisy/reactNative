@@ -2,7 +2,7 @@ import React from 'react';
 import {StyleSheet, TextInput, View, Text} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
-const Input = ({style, errorNotif, icon, ...props}) => {
+const TextInputIconError = ({style, errorNotif, icon, ...props}) => {
   return (
     <View styles={styles.container}>
       <View style={[styles.inputWrapper, errorNotif ? styles.error : null]}>
@@ -13,9 +13,11 @@ const Input = ({style, errorNotif, icon, ...props}) => {
           underlineColorAndroid="transparent"
         />
       </View>
-      <View styles={styles.errorWrapper}>
-        <Text style={styles.errorText}>{errorNotif}</Text>
-      </View>
+      {errorNotif && (
+        <View styles={styles.errorWrapper}>
+          <Text style={styles.errorText}>{errorNotif}</Text>
+        </View>
+      )}
     </View>
   );
 };
@@ -59,4 +61,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Input;
+export default TextInputIconError;

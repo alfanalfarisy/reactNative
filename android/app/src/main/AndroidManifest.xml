@@ -5,13 +5,15 @@
 
     <application
       android:name=".MainApplication"
-      
       android:usesCleartextTraffic="true"
       android:label="@string/app_name"
       android:icon="@mipmap/ic_launcher"
       android:roundIcon="@mipmap/ic_launcher_round"
       android:allowBackup="false"
       android:theme="@style/AppTheme">
+      <meta-data
+        android:name="com.google.android.geo.API_KEY"
+        android:value="AIzaSyBzoe-yvv5Q0Y2ohXrC7zzF_ZJgdBNeJ7o"/>
       <activity
         android:name=".MainActivity"
         android:label="@string/app_name"

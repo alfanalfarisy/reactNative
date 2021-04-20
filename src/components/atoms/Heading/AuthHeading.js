@@ -12,7 +12,7 @@ const AuthHeading = ({children, style, ...props}) => {
 const styles = StyleSheet.create({
   text: {
     fontSize: 32,
-    color: 'white',
+    color: 'black',
     fontFamily: 'AkayaTelivigala-Regular',
   },
 });

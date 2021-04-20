@@ -4,6 +4,14 @@ import android.app.Application;
 import android.content.Context;
 import com.facebook.react.PackageList;
 import com.facebook.react.ReactApplication;
+import com.airbnb.android.react.maps.MapsPackage;
+import com.horcrux.svg.SvgPackage;
+import com.horcrux.svg.SvgPackage;
+import com.github.wuxudong.rncharts.MPAndroidChartPackage;
+import com.th3rdwave.safeareacontext.SafeAreaContextPackage;
+import org.reactnative.maskedview.RNCMaskedViewPackage;
+import com.swmansion.gesturehandler.react.RNGestureHandlerPackage;
+import com.swmansion.reanimated.ReanimatedPackage;
 import com.swmansion.gesturehandler.react.RNGestureHandlerPackage;
 import com.th3rdwave.safeareacontext.SafeAreaContextPackage;
 import com.facebook.react.ReactInstanceManager;
@@ -41,7 +49,7 @@ public class MainApplication extends Application implements ReactApplication {
   public ReactNativeHost getReactNativeHost() {
     return mReactNativeHost;
   }
-
+  
   @Override
   public void onCreate() {
     super.onCreate();

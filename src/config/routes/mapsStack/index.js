@@ -1,6 +1,6 @@
 import * as React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
-import {MapsScreen} from '../../../container/screens';
+import {MapsScreen} from '@screens';
 const MapsStack = createStackNavigator();
 
 function MapsStackScreen() {
@@ -8,7 +8,6 @@ function MapsStackScreen() {
   return (
     <MapsStack.Navigator>
       <MapsStack.Screen name="Maps" component={MapsScreen} options={Options} />
-      {/* <MapsStack.Screen name="Details" component={DetailsScreen} /> */}
     </MapsStack.Navigator>
   );
 }

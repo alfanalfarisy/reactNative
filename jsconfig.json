@@ -3,14 +3,15 @@
 //       "baseUrl": ".",
 //       "paths": {
 //        // "_assets": "src/assets",
-//           // "_components": "src/components",
-//           "@atoms": "[src/components/atoms]",
-//           // "_molecules": "src/components/molecules",
-//           // "_organisms": "src/components/organisms",
-//           // "_routes": "src/config/routes",
-//           "@screens": "[src/container/screens]",
-//           "@actions": "[src/config/redux/actions]",
-//           "@reducers": "[src/config/redux/reducers]",
+//             "@img": "[src/assets/img]",
+//             // "_components": "src/components",
+//             "@atoms": "[src/components/atoms]",
+//             // "_molecules": "src/components/molecules",
+//             // "_organisms": "src/components/organisms",
+//             // "_routes": "src/config/routes",
+//             "@screens": "[src/container/screens]",
+//             "@actions": "[src/config/redux/actions]",
+//             "@reducers": "[src/config/redux/reducers]",
 //       }
 //     }
-//   }
+// }

@@ -13,15 +13,15 @@ export default FilledButton;
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: '#fc6f03',
-    width: '100%',
-    padding: 10,
+    backgroundColor: '#fff',
+    height: 40,
+    margin: 10,
     justifyContent: 'center',
     alignItems: 'center',
-    borderRadius: 10,
+    borderRadius: 50,
   },
   text: {
-    color: 'white',
+    color: 'black',
     fontWeight: '500',
     fontSize: 16,
   },

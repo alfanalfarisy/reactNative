@@ -1,7 +1,12 @@
 import axios from 'axios';
 import setAuthToken from '../../../utils/setAuthToken';
 import jwt_decode from 'jwt-decode';
-import {GET_ERRORS, SET_CURRENT_USER, USER_LOADING} from './types';
+import {
+  GET_ERRORS_LOGIN,
+  GET_ERRORS_REGISTER,
+  SET_CURRENT_USER,
+  USER_LOADING,
+} from './types';
 import {BASE_URL} from '../../../utils/constanta';
 // Register User
 export const registerUser = (userData, navigation) => (dispatch) => {
@@ -12,7 +17,7 @@ export const registerUser = (userData, navigation) => (dispatch) => {
     }) // re-direct to login on successful register
     .catch((err) =>
       dispatch({
-        type: GET_ERRORS,
+        type: GET_ERRORS_REGISTER,
         payload: err.response.data,
       }),
     );
@@ -44,7 +49,7 @@ export const loginUser = (email, password, navigation) => (dispatch) => {
       console.log(err);
       dispatch(setUserLoading(false));
       dispatch({
-        type: GET_ERRORS,
+        type: GET_ERRORS_LOGIN,
         payload: err.response.data,
       });
       // navigation.push('Registration');

@@ -1,18 +1,14 @@
 import React, {useState, useEffect} from 'react';
 import {ImageBackground, ScrollView, StyleSheet, View} from 'react-native';
 import AuthHeading from '@atoms/Heading/AuthHeading';
-import TextInput from '@atoms/Input/TextInput';
 import FilledButton from '@atoms/Button/FilledButton';
-import TextButton from '@atoms/Button/TextButton';
-
-import IconButton from '@atoms/Button/IconButton';
-import ErrorTextAlert from '@atoms/Notifications/ErrorTextAlert';
 import {useDispatch, useSelector} from 'react-redux';
 import {registerUser} from '@actions/authAction';
+import TextInputIconError from '@molecules/Input/TextInputIconError';
 
 const RegisterScreen = ({navigation}) => {
+  const errors = useSelector((state) => state.err.register);
   const [error, setError] = useState('');
-  const errors = useSelector((state) => state.err);
   useEffect(() => {
     setError(errors);
   }, [errors]);
@@ -31,67 +27,67 @@ const RegisterScreen = ({navigation}) => {
       [id]: v,
     });
   };
-  console.log(error);
+  console.log(errors.userName);
   const dispatch = useDispatch();
   return (
-    <ScrollView>
-      <View style={styles.container}>
-        <ImageBackground
-          source={require('../../../assets/img/bg-login1.jpg')}
-          style={styles.backgroundImage}>
-          <AuthHeading style={styles.title}> LETS GO!</AuthHeading>
-          <TextInput
+    <ScrollView style={styles.container}>
+      <ImageBackground
+        source={require('../../../assets/img/bg-login1.jpg')}
+        style={styles.backgroundImage}>
+        <AuthHeading style={styles.title}> LETS GO!</AuthHeading>
+        <View style={styles.formWrapper}>
+          <TextInputIconError
             onChangeText={(v) => setStateFunc('userName', v)}
             style={styles.input}
-            placeholder={'userName'}
+            placeholder={'username'}
             value={form.userName}
-            errorNotif={error.userName}
+            errorNotif={errors.userName}
           />
-          <TextInput
+          <TextInputIconError
             style={styles.input}
-            placeholder={'firstName'}
+            placeholder={'first name'}
             value={form.firstName}
             onChangeText={(v) => setStateFunc('firstName', v)}
-            errorNotif={error.firstName}
+            errorNotif={errors.firstName}
           />
-          <TextInput
+          <TextInputIconError
             style={styles.input}
-            placeholder={'lastName'}
+            placeholder={'last name'}
             value={form.lastName}
             onChangeText={(v) => setStateFunc('lastName', v)}
-            errorNotif={error.lastName}
+            errorNotif={errors.lastName}
           />
-          <TextInput
+          <TextInputIconError
             style={styles.input}
-            placeholder={'numberPhone'}
+            placeholder={'number phone'}
             value={form.numberPhone}
             keyboardType="name-phone-pad"
             onChangeText={(v) => setStateFunc('numberPhone', v)}
-            errorNotif={error.numberPhone}
+            errorNotif={errors.numberPhone}
           />
-          <TextInput
+          <TextInputIconError
             style={styles.input}
             placeholder={'email'}
             keyboardType="email-address"
             value={form.email}
             onChangeText={(v) => setStateFunc('email', v)}
-            errorNotif={error.email}
+            errorNotif={errors.email}
           />
-          <TextInput
+          <TextInputIconError
             style={styles.input}
             placeholder={'password'}
             value={form.password}
             onChangeText={(v) => setStateFunc('password', v)}
             secureTextEntry
-            errorNotif={error.password}
+            errorNotif={errors.password}
           />
-          <TextInput
+          <TextInputIconError
             style={styles.input}
-            placeholder={'password2'}
+            placeholder={'validasi password'}
             value={form.password2}
             onChangeText={(v) => setStateFunc('password2', v)}
             secureTextEntry
-            errorNotif={error.password2}
+            errorNotif={errors.password2}
           />
           <FilledButton
             title="Register"
@@ -100,8 +96,8 @@ const RegisterScreen = ({navigation}) => {
               dispatch(registerUser(form, navigation));
             }}
           />
-        </ImageBackground>
-      </View>
+        </View>
+      </ImageBackground>
     </ScrollView>
   );
 };
@@ -111,13 +107,20 @@ export default RegisterScreen;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    // padding: 10,
+    flexDirection: 'column',
   },
   backgroundImage: {
     flex: 1,
     resizeMode: 'cover', // or 'stretch'
+    alignItems: 'center',
     justifyContent: 'center',
     padding: 10,
+  },
+  formWrapper: {
+    backgroundColor: 'rgba(255,255,255, 0.6)',
+    width: '100%',
+    padding: 10,
+    borderRadius: 30,
   },
   title: {
     // marginBottom: 32,

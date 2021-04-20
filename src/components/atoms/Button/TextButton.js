@@ -13,13 +13,11 @@ export default TextButton;
 
 const styles = StyleSheet.create({
   container: {
-    width: '100%',
-    padding: 10,
     justifyContent: 'center',
     alignItems: 'center',
   },
   text: {
-    color: '#fc6f03',
+    color: '#000000',
     fontWeight: '500',
     fontSize: 12,
   },
