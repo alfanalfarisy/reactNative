@@ -30,15 +30,8 @@ const persistConfig = {
   // blacklist: [],
 };
 
-// Middleware: Redux Persist Persisted Reducer
 const persistedReducer = persistReducer(persistConfig, rootReducer);
 
-// Redux: Store
-// const store = createStore(persistedReducer, applyMiddleware(thunk));
 const store = createStore(persistedReducer, {}, applyMiddleware(thunk));
-
-// Middleware: Redux Persist Persister
 let persistor = persistStore(store);
-
-// Exports
 export {store, persistor};

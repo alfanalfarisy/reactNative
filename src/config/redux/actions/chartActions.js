@@ -45,10 +45,3 @@ export const reqSite = (data) => () => {
     value: data,
   });
 };
-
-// socket.on('dpsUpdateByReqSite', (msg) => {
-//   store.dispatch({
-//     type: 'CHANGE_UPDATECHART',
-//     value: msg.data,
-//   });
-// });

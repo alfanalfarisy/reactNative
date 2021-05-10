@@ -11,8 +11,10 @@
     "postinstall": "patch-package"
   },
   "dependencies": {
+    "@babel/runtime": "^7.14.0",
     "@react-native-async-storage/async-storage": "^1.15.2",
     "@react-native-community/masked-view": "^0.1.10",
+    "@react-native-firebase/app": "^11.4.1",
     "@react-native-picker/picker": "^1.9.11",
     "@react-navigation/bottom-tabs": "^5.11.7",
     "@react-navigation/native": "^5.9.2",
@@ -22,6 +24,7 @@
     "eslint-import-resolver-babel-module": "^5.2.0",
     "eslint-plugin-import": "^2.22.1",
     "fs": "^0.0.1-security",
+    "immutability-helper": "^3.1.1",
     "is-empty": "^1.2.0",
     "jwt-decode": "^3.1.2",
     "moment": "^2.29.1",
@@ -36,6 +39,7 @@
     "react-native-maps": "^0.27.1",
     "react-native-offline": "^5.8.0",
     "react-native-paper": "^4.7.2",
+    "react-native-push-notification": "^7.2.3",
     "react-native-reanimated": "^1.13.2",
     "react-native-safe-area-context": "^3.1.9",
     "react-native-screens": "^2.17.1",
@@ -45,7 +49,8 @@
     "react-redux": "^7.2.2",
     "redux": "^4.0.5",
     "redux-persist": "^6.0.0",
-    "redux-thunk": "^2.3.0"
+    "redux-thunk": "^2.3.0",
+    "socket.io-client": "^2.1.1"
   },
   "devDependencies": {
     "@babel/core": "7.12.13",

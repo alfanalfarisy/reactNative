@@ -19,7 +19,7 @@ export const Router = () => {
   const auth = useSelector((state) => state.auth);
   return (
     <NavigationContainer theme={LightTheme}>
-      {auth.isAuthenticated == false ? (
+      {auth.isAuthenticated == true ? (
         <Tab.Navigator
           screenOptions={({route}) => ({
             tabBarIcon: ({focused, color, size}) => {
@@ -42,11 +42,11 @@ export const Router = () => {
             activeTintColor: 'tomato',
             inactiveTintColor: 'gray',
           }}
-          initialRouteName="Product">
+          initialRouteName="Home">
           <Tab.Screen name="Home" component={HomeStackScreen} />
           <Tab.Screen name="Product" component={ProductStackScreen} />
-          <Tab.Screen name="Account" component={AccountStackScreen} />
           <Tab.Screen name="Maps" component={MapsStackScreen} />
+          <Tab.Screen name="Account" component={AccountStackScreen} />
         </Tab.Navigator>
       ) : (
         <AuthStackScreen />

@@ -27,7 +27,6 @@ const LoginScreen = ({navigation}) => {
     setError(errors);
   }, [errors]);
 
-  console.log(errors);
   return (
     <KeyboardAvoidingView style={styles.container} keyboardVerticalOffset={30}>
       <ImageBackground
@@ -75,7 +74,7 @@ const LoginScreen = ({navigation}) => {
           />
         </View>
       </ImageBackground>
-      <ScreenLoading loading={isLoading} />
+      {/* <ScreenLoading loading={isLoading} /> */}
     </KeyboardAvoidingView>
   );
 };
